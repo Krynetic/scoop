@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/star2000/scoop/master/schema.json",
+
+  "version": "1.2.6",
+  "description": "Krynetic database",
+  "homepage": "https://krynetic.com/",
+  "license": "Proprietary",
+
+  "architecture": {
+    "64bit": {
+      "url": "https://github.com/krynetic/Database-Releases/releases/download/v1.2.6/Krynetic_v1.2.6_windows_amd64.exe",
+      "hash": "fdb144486d267c9be607ac0a78d6ebfbd1463cc41f82920a76a87cfbd093bde9",
+
+      "installer": {
+        "file": "Krynetic_v1.2.6_windows_amd64.exe",
+        "args": [ "--silent", "--installto", "$dir\\app" ]
+      },
+
+      "todo": "Build vpk [win] with --shortcuts None",
+      "shortcuts_later": [
+        [
+          "app\\current\\Krynetic.Database.App.exe",
+          "Krynetic App"
+        ]
+      ]
+    }
+  },
+
+  "persist": [
+    "data"
+  ],
+
+  "checkver": {
+    "github": "https://github.com/Krynetic/Database-Releases"
+  },
+
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/krynetic/Database-Releases/releases/download/v$version/krynetic_v$version_windows_amd64.exe"
+      }
+    }
+  }
+}
